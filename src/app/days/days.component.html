@@ -10,46 +10,46 @@
     <!-- Icono de flecha que rota según el estado del menú desplegable -->
     <span class="arrow-icon" [class.rotate-right]="dropdownOpen" [class.rotate-down]="!dropdownOpen">&#9660;</span>
   </button>
-</div>
 
-<!-- Capa de fondo oscuro que se muestra cuando el menú está abierto y cierra el menú al hacer clic en ella -->
-<div class="background-overlay" [hidden]="!dropdownOpen" (click)="closeDropdown()"></div>
+
+  <!-- Capa de fondo oscuro que se muestra cuando el menú está abierto y cierra el menú al hacer clic en ella -->
+  <div class="background-overlay" [hidden]="!dropdownOpen" (click)="closeDropdown()"></div>
   
-<!-- Contenedor del menú emergente -->
-<div class="dropdown-content" [hidden]="!dropdownOpen">
+  <!-- Contenedor del menú emergente -->
+  <div class="dropdown-content" [hidden]="!dropdownOpen">
  
-  <!-- Contenido de la ventana desplegable con tamaño fijo -->
-  <div class="fixed-size-dropdown">
+    <!-- Contenido de la ventana desplegable con tamaño fijo -->
+    <div class="fixed-size-dropdown">
     
-    <!-- Contenedor de la barra de búsqueda -->
-    <div class="search-container">
-      <input type="text" [(ngModel)]="filterValue" id="filterValue" placeholder="Búsqueda">
-    </div>
+      <!-- Contenedor de la barra de búsqueda -->
+      <div class="search-container">
+        <input type="text" [(ngModel)]="filterValue" id="filterValue" placeholder="Búsqueda">
+      </div>
     
-    <!-- Etiqueta para mostrar los días con checkbox -->
-    <div class="filter-by-days">
-      <p class="filter-text">Filtrar por días</p>
-      <div class="day-checkboxes"></div>
-        <label *ngFor="let day of days">
-          <input type="checkbox" [checked]="isDaySelected(day.dayNumber)" (change)="toggleDaySelection(day.dayNumber)"> Día {{ day.dayNumber }} 
-        </label>
-    </div>
+      <!-- Etiqueta para mostrar los días con checkbox -->
+      <div class="filter-by-days">
+        <p class="filter-text">Filtrar por días</p>
+        <div class="day-checkboxes"></div>
+          <label *ngFor="let day of days">
+            <input type="checkbox" [checked]="isDaySelected(day.dayNumber)" (change)="toggleDaySelection(day.dayNumber)"> Día {{ day.dayNumber }} 
+          </label>
+      </div>
    
-    <!-- Etiqueta para mostrar las ciudades con checkbox -->
-    <div class="filter-by-cities">
-      <p class="filter-text">Filtrar por ciudad</p>
-      <div class="city-checkboxes"></div>
-        <label *ngFor="let day of days">
-          <input type="checkbox" [checked]="isCitySelected(day.cityName)" (change)="toggleCitySelection(day.cityName)"> {{ day.cityName}}
-        </label>
-    </div>
+      <!-- Etiqueta para mostrar las ciudades con checkbox -->
+      <div class="filter-by-cities">
+        <p class="filter-text">Filtrar por ciudad</p>
+        <div class="city-checkboxes"></div>
+          <label *ngFor="let day of days">
+            <input type="checkbox" [checked]="isCitySelected(day.cityName)" (change)="toggleCitySelection(day.cityName)"> {{ day.cityName}}
+          </label>
+      </div>
    
-    <!-- Botón para aplicar los filtros seleccionados -->
-    <button (click)="applyFilters()" class="apply-button">Aplicar filtros</button>
-    <button (click)="resetFilters()" class="reset-button">Restablecer filtros</button>
+      <!-- Botón para aplicar los filtros seleccionados -->
+      <button (click)="applyFilters()" class="apply-button">Aplicar filtros</button>
+      <button (click)="resetFilters()" class="reset-button">Restablecer filtros</button>
+    </div>
   </div>
 </div>
-
 
 
 <div class="list-container">
