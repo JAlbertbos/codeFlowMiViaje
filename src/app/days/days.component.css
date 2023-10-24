@@ -48,7 +48,7 @@
     top: 130px; /* Comienza desde la parte superior de la página */
     right: 500px; /* Comienza desde la parte derecha de la página */
     width: 100%; /* Ancho al 100% de la ventana */
-    height: 100%; /* Altura al 100% de la ventana */
+    height: 120%; /* Altura al 100% de la ventana */
     background: rgba(0, 0, 0, 0.5); /* Color de fondo oscuro con opacidad del 50% */
     z-index: 1; /* Capa z en 1 para estar detrás del menú emergente */
 }
@@ -57,7 +57,7 @@
 .dropdown-content {
     background: #ffffff; /* Fondo blanco para el menú */
     width: 500px; /* Ancho fijo del menú */
-    height: 100%; /* Altura fija del menú */
+    height: 120%; /* Altura fija del menú */
     position: absolute; /* Posición fija para mantenerlo en su lugar */
     top: 130px; /* Alinea el menú en la parte superior de la página */
     right: 0; /* Alinea el menú en el lado derecho de la página */
@@ -171,6 +171,7 @@
     height: auto;
     flex-direction: column;
     margin-top: 30px;
+    z-index: 0;
 }
     /* Estilos para el título "h2" */
 h2 {
